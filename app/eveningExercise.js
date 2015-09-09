@@ -43,7 +43,12 @@ exports.eveningExerciseAnswers = {
   },
 
   longestSubString : function(str) {
-
+    var subStringArray = str.split(" ");
+    subStringArray.sort(function(a, b){
+      return a.length - b.length;
+    });
+    var longest = subStringArray.pop();
+    return longest;
   },
 
   letterMoveForward : function(str) {
