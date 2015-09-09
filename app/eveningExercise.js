@@ -56,6 +56,8 @@ exports.eveningExerciseAnswers = {
   },
 
   capitalizeWords : function(str) {
-
+    return str.replace(/(?:^|\s)\S/g, function(char) {
+      return char.toUpperCase();
+    });
   }
 };
