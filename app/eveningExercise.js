@@ -31,16 +31,15 @@ exports.eveningExerciseAnswers = {
   },
 
   reverseString : function(str) {
-    // debugger;
-    // var strCopy = str;
-    // var stringArray = [];
-    // var currentChar;
-    // while (strCopy.length > 0) {
-    //   currentChar = strCopy.slice(0,1);
-    //   stringArray.unshift(currentChar);
-    // };
-    // var newStr = stringArray.join();
-    // return newStr;
+    var strArr = str.split('');
+    var reverseArr = [];
+    var currentChar = '';
+    while (strArr.length > 0){
+      currentChar = strArr.pop();
+      reverseArr.push(currentChar);
+    };
+    var newStr = reverseArr.join('');
+    return newStr;
   },
 
   longestSubString : function(str) {
