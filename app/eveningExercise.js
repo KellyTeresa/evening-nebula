@@ -8,13 +8,25 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.eveningExerciseAnswers = {
   indexOf : function(arr, item) {
-    return arr.indexOf(item);
+    // return arr.indexOf(item);
     // totally cheating
+
+    // let's try this without cheating
+    var i = 0
+    while (i < arr.length) {
+      i++;
+      //check each spot in the array for the item
+      if (arr[i] === item) {
+        return i;
+      };
+    };
+    // item was not found
+    return -1;
   },
 
   sum : function(arr) {
     var arrCopy = arr;
-    var total = 0
+    var total = 0;
     while (arrCopy.length > 0) {
       total = total + arrCopy.shift();
     };
@@ -52,7 +64,14 @@ exports.eveningExerciseAnswers = {
   },
 
   letterMoveForward : function(str) {
-
+    var newStr = str.replace(/[a-zA-Z]/g, function(char) {
+      switch (char) {
+        case 'z': return 'a';
+        case 'Z': return 'A';
+        default: return String.fromCharCode(char.charCodeAt(0)+1)
+      };
+    });
+    return newStr;
   },
 
   capitalizeWords : function(str) {
